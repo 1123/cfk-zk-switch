@@ -1,0 +1,23 @@
+spec:
+  template:
+    spec:
+      hostAliases:
+      - ip: "128.203.115.105"
+        hostnames:
+        - "zk-source-0.zk-source.confluent.svc.cluster.local"
+      - ip: "135.237.72.29"
+        hostnames:
+        - "zk-source-1.zk-source.confluent.svc.cluster.local"
+      - ip: "20.253.49.23"
+        hostnames:
+        - "zk-source-2.zk-source.confluent.svc.cluster.local"
+      - ip: "74.179.216.107"
+        hostnames:
+        - "zk-destination-0.zk-destination.confluent.svc.cluster.local"
+      - ip: "10.9.8.7"
+        hostnames:
+        - "zk-destination-1.zk-destination.confluent.svc.cluster.local"
+      - ip: "10.9.8.7"
+        hostnames:
+        - "zk-destination-2.zk-destination.confluent.svc.cluster.local"
+

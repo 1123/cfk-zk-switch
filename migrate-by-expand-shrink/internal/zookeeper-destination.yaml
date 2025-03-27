@@ -1,0 +1,26 @@
+---
+apiVersion: platform.confluent.io/v1beta1
+kind: Zookeeper
+metadata:
+  name: zk-destination 
+  namespace: confluent
+#  annotations:
+#    platform.confluent.io/zookeeper-myid-offset: "3"
+spec:
+  replicas: 3
+  image:
+    application: confluentinc/cp-zookeeper:7.8.0
+    init: confluentinc/confluent-init-container:2.10.0
+  dataVolumeCapacity: 10Gi
+  logVolumeCapacity: 10Gi
+  externalAccess:
+    type: loadBalancer
+    loadBalancer:
+      domain: foo.io
+      advertisedURL:
+        enabled: true
+      prefix: zk-destination-
+  peers:
+    - server.0=zk-destination-0.zk-destination.confluent.svc.cluster.local:2888:3888
+    - server.1=zk-destination-1.zk-destination.confluent.svc.cluster.local:2888:3888
+    - server.2=zk-destination-2.zk-destination.confluent.svc.cluster.local:2888:3888
