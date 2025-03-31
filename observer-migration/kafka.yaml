@@ -14,4 +14,4 @@ spec:
     enabled: true
   dependencies:
     zookeeper:
-      endpoint: zk-destination.confluent.svc.cluster.local:2181
+      endpoint: zk-source.confluent.svc.cluster.local:2181
