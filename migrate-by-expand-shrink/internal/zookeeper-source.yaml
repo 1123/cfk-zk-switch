@@ -3,7 +3,7 @@ apiVersion: platform.confluent.io/v1beta1
 kind: Zookeeper
 metadata:
   name: zk-source
-  namespace: confluent
+  namespace: martin
 spec:
   replicas: 1
   image:
@@ -19,6 +19,6 @@ spec:
         enabled: true
         prefix: zk-source-
   peers:
-    - server.0=zk-source-0.zk-source.confluent.svc.cluster.local:2888:3888
-    - server.3=zk-destination-0.zk-destination.confluent.svc.cluster.local:2888:3888
-    - server.4=zk-destination-1.zk-destination.confluent.svc.cluster.local:2888:3888
+    - server.0=zk-source-0.zk-source.martin.svc.cluster.local:2888:3888
+    - server.3=zk-destination-0.zk-destination.martin.svc.cluster.local:2888:3888
+    - server.4=zk-destination-1.zk-destination.martin.svc.cluster.local:2888:3888

@@ -3,7 +3,7 @@ apiVersion: platform.confluent.io/v1beta1
 kind: Zookeeper
 metadata:
   name: zk-dummy
-  namespace: confluent
+  namespace: martin 
 spec:
   replicas: 1
   image:

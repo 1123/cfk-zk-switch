@@ -3,7 +3,7 @@ apiVersion: platform.confluent.io/v1beta1
 kind: Zookeeper
 metadata:
   name: zk0
-  namespace: confluent
+  namespace: martin
   annotations:
     platform.confluent.io/pod-overlay-configmap-name: dns-overlay-cm
     platform.confluent.io/zookeeper-myid-offset: "0"
@@ -31,7 +31,7 @@ apiVersion: platform.confluent.io/v1beta1
 kind: Zookeeper
 metadata:
   name: zk1
-  namespace: confluent
+  namespace: martin
   annotations:
     platform.confluent.io/pod-overlay-configmap-name: dns-overlay-cm
     platform.confluent.io/zookeeper-myid-offset: "2"

@@ -3,7 +3,7 @@ apiVersion: platform.confluent.io/v1beta1
 kind: Zookeeper
 metadata:
   name: zk-source
-  namespace: confluent
+  namespace: martin
 spec:
   replicas: 3
   image:

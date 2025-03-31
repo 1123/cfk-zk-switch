@@ -3,7 +3,7 @@ apiVersion: platform.confluent.io/v1beta1
 kind: Kafka
 metadata:
   name: kafka
-  namespace: confluent
+  namespace: martin
 spec:
   replicas: 3
   image:
@@ -14,4 +14,4 @@ spec:
     enabled: true
   dependencies:
     zookeeper:
-      endpoint: zk-destination.confluent.svc.cluster.local:2181
+      endpoint: zk-destination.martin.svc.cluster.local:2181

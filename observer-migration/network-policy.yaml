@@ -2,10 +2,9 @@ apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
   name: block-traffic-to-sourc-zk
-  namespace: confluent
+  namespace: martin
 spec:
   podSelector:
-    matchNamespace: confluent
     matchLabels:
       app: zk-destination
   ingress:
@@ -14,6 +13,14 @@ spec:
             matchLabels:
               app: zk-destination
       ports:
+        - port: 2888
+        - port: 3888
+
+    - from:
+       - podSelector:
+          matchLabels:
+            app: kafka
+      ports:
         - port: 2181
   egress:
     - to:
@@ -21,7 +28,8 @@ spec:
             matchLabels:
               app: zk-destination
       ports:
-        - port: 2181
+        - port: 2888
+        - port: 3888
     - to:
         - namespaceSelector: {}
           podSelector:

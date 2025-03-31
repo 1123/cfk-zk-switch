@@ -3,7 +3,7 @@ apiVersion: platform.confluent.io/v1beta1
 kind: Zookeeper
 metadata:
   name: zk-destination 
-  namespace: confluent
+  namespace: martin
   annotations:
     platform.confluent.io/zookeeper-myid-offset: "3"
 spec:
@@ -23,11 +23,11 @@ spec:
     server: 
       - peerType=observer
   peers:
-    - server.0=zk-source-0.zk-source.confluent.svc.cluster.local:2888:3888
-    - server.1=zk-source-1.zk-source.confluent.svc.cluster.local:2888:3888
-    - server.2=zk-source-2.zk-source.confluent.svc.cluster.local:2888:3888
-    - server.3=zk-destination-0.zk-destination.confluent.svc.cluster.local:2888:3888:observer
-    - server.4=zk-destination-1.zk-destination.confluent.svc.cluster.local:2888:3888:observer
-    - server.5=zk-destination-2.zk-destination.confluent.svc.cluster.local:2888:3888:observer
-    - server.6=zk-destination-3.zk-destination.confluent.svc.cluster.local:2888:3888:observer
+    - server.0=zk-source-0.zk-source.martin.svc.cluster.local:2888:3888
+    - server.1=zk-source-1.zk-source.martin.svc.cluster.local:2888:3888
+    - server.2=zk-source-2.zk-source.martin.svc.cluster.local:2888:3888
+    - server.3=zk-destination-0.zk-destination.martin.svc.cluster.local:2888:3888:observer
+    - server.4=zk-destination-1.zk-destination.martin.svc.cluster.local:2888:3888:observer
+    - server.5=zk-destination-2.zk-destination.martin.svc.cluster.local:2888:3888:observer
+    - server.6=zk-destination-3.zk-destination.martin.svc.cluster.local:2888:3888:observer
 
