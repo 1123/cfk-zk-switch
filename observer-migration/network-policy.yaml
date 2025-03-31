@@ -5,6 +5,7 @@ metadata:
   namespace: confluent
 spec:
   podSelector:
+    matchNamespace: confluent
     matchLabels:
       app: zk-destination
   ingress:

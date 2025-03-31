@@ -1,0 +1,13 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: zk-source-deny-np
+  namespace: confluent
+spec:
+  podSelector: 
+    matchLabels: 
+      app: zk-source
+  policyTypes:
+  - Ingress
+  - Egress
