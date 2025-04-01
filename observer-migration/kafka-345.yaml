@@ -1,0 +1,23 @@
+---
+apiVersion: platform.confluent.io/v1beta1
+kind: Kafka
+metadata:
+  name: kafka
+  namespace: destination
+  annotations:
+    platform.confluent.io/broker-id-offset: "3"
+spec:
+  replicas: 3
+  image:
+    application: confluentinc/cp-server:7.9.0
+    init: confluentinc/confluent-init-container:2.11.0
+  dataVolumeCapacity: 100Gi
+  metricReporter:
+    enabled: true
+  dependencies:
+    zookeeper:
+      endpoint: zk-destination.confluent.svc.cluster.local:2181
+  configOverrides: 
+    server: 
+      - zookeeper.connect=zk-destination.confluent.svc.cluster.local:2181/kafka-confluent
+ 
