@@ -8,7 +8,7 @@ metadata:
     platform.confluent.io/pod-overlay-configmap-name: dns-overlay-cm
     platform.confluent.io/zookeeper-myid-offset: "3"
 spec:
-  replicas: 1
+  replicas: 3
   image:
     application: confluentinc/cp-zookeeper:7.8.0
     init: confluentinc/confluent-init-container:2.10.0
@@ -22,8 +22,14 @@ spec:
         enabled: true
         prefix: zk-destination-
   peers:
+<<<<<<< HEAD
     - server.0=zk-source-0.zk-source.martin.svc.cluster.local:2888:3888
     - server.1=zk-source-1.zk-source.martin.svc.cluster.local:2888:3888
     - server.2=zk-source-2.zk-source.martin.svc.cluster.local:2888:3888
     - server.3=zk-destination-0.zk-destination.martin.svc.cluster.local:2888:3888
     - server.4=zk-destination-1.zk-destination.martin.svc.cluster.local:2888:3888
+=======
+    - server.3=zk-destination-0.zk-destination.confluent.svc.cluster.local:2888:3888
+    - server.4=zk-destination-1.zk-destination.confluent.svc.cluster.local:2888:3888
+    - server.5=zk-destination-2.zk-destination.confluent.svc.cluster.local:2888:3888
+>>>>>>> a4e65f7 (mend)
